@@ -7,7 +7,7 @@ function HTMLActuator() {
   this.score = 0;
 }
 
-HTMLActuator.prototype.actuate = function (grid, extra_tiles, metadata) {
+HTMLActuator.prototype.actuate = function (grid, metadata) {
 
   var self = this;
 
@@ -21,12 +21,6 @@ HTMLActuator.prototype.actuate = function (grid, extra_tiles, metadata) {
         }
       });
     });
-	
-	extra_tiles.forEach(function (tile){
-		if(tile){
-			self.addTile(tile);
-		}
-	});
 
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
