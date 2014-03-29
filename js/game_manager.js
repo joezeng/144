@@ -91,6 +91,7 @@ GameManager.prototype.prepareTiles = function () {
   this.grid.eachCell(function (x, y, tile) {
     if (tile) {
       tile.mergedValue = null;
+	  tile.mergedFrom = null;
       tile.savePosition();
     }
   });
@@ -167,6 +168,7 @@ GameManager.prototype.move = function (direction) {
 	
 		  var merged = new Tile(positions.next, tile.value + next.value);
 		  merged.mergedValue = tile.value;
+		  merged.mergedFrom = [next, tile];
 		  
 		  self.grid.insertTile(merged);
 		  self.grid.removeTile(tile);
