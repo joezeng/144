@@ -392,10 +392,20 @@ hr {
     background: #99ff33; }
   .tile.tile-72 .tile-inner {
     background: #66ff33; }
+	
   .tile.tile-144 .tile-inner {
   font-size: 48px;
     background: #33ff33; }
 
+  .tile.tile-27 .tile-inner {
+    color: #f9f6f2;
+    background: #edc22e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);}
+
+  .tile.tile-3-digit .tile-inner{
+	font-size: 48px;
+  }
+  
   .tile .tile-inner {
     border-radius: 3px;
     background: #696969;
