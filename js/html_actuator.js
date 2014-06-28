@@ -4,6 +4,7 @@ function HTMLActuator() {
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
 
+  this.already_won = false;
   this.score = 0;
 }
 
@@ -59,6 +60,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
+  if (tile.value == 144) self.message(true);
   if (tile.value > 144 && tile.value % 144 == 0) classes.push("tile-super" + ("" + tile.value).length);
 
   this.applyClasses(wrapper, classes);
@@ -130,11 +132,17 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
+
+  if (won && this.already_won) return false;
+
   var type    = won ? "game-won" : "game-over";
   var message = won ? "You win!" : "Game over!";
+  
+  if (won) this.already_won = true;
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+
 };
 
 HTMLActuator.prototype.clearMessage = function () {
