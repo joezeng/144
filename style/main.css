@@ -396,6 +396,19 @@ hr {
   .tile.tile-144 .tile-inner {
     background: #33ff33; }
 
+  .tile.tile-super3 .tile-inner {
+    background: #00ff00; }
+
+  .tile.tile-super4 .tile-inner {
+    background: #00ff00; 
+	font-size: 36px;}
+
+  .tile.tile-super5 .tile-inner {
+    background: #00ff00;
+	font-size: 30px;}
+
+	/* special tiles */
+
   .tile.tile-27 .tile-inner {
     color: #f9f6f2;
     background: #edc22e;
